@@ -1,0 +1,15 @@
+<h2>Edit Book</h2>
+<form action="/books/<%= book._id %>" method="POST">
+    <label for="title">Title:</label>
+    <input type="text" name="title" id="title" value="<%= book.title %>" required>
+
+    <label for="author">Author:</label>
+    <input type="text" name="author" id="author" value="<%= book.author %>" required>
+
+    <label for="summary">Summary:</label>
+    <textarea name="summary" id="summary" required><%= book.summary %></textarea>
+
+    <button type="submit">Update Book</button>
+</form>
+
+

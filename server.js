@@ -8,15 +8,20 @@ constBook = require('./models/book')
 constUser = require('./models/user')
 const bookRoutes = require('./routes/books')
 const userRoutes = require('./routes/users')
+const expressLayouts = require('express-ejs-layouts')
 const app = express()
 
+
+app.set('view engine', 'ejs')
+app.use(expressLayouts)
+app.set('layout', 'layout')
 app.use(express.urlencoded({ extended: true }))
 app.use('/assets', express.static('public'))
 app.use(methodOverride('_method'))
 app.use(session({
     secret: process.env.SESSION_SECRET,
     resave: false,
-    saveUninitialized: false,
+    saveUninitialized: true,
 }))
 app.use((req, res, next) => {
     res.locals.user = req.session.user

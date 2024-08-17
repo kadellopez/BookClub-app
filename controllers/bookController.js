@@ -60,13 +60,16 @@ const update = async (req, res) => {
 const reMoof = async (req, res) => {
     try {
         const deletedBook = await Book.findByIdAndDelete(req.params.id)
-        res.redirect('/books.ejs', {
-            book: deletedBook
-        })
+        if (!deletedBook) {
+            res.status(404).json({ msg: error.message })
+        } else {
+            res.redirect('/books')
+        }
     } catch (error) {
         res.status(400).json({ msg: error.message })
     }
 }
+
 
 module.exports = {
     index,

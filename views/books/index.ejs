@@ -1,0 +1,15 @@
+<h2>Books</h2>
+<a href="/books/new">Add a New Book</a>
+
+<ul>
+    <% books.forEach(book => { %>
+        <li>
+            <a href="/books/<%= book._id %>"><%= book.title %></a>
+            by <%= book.author %>
+            <a href="/books/<%= book._id %>/edit">Edit</a>
+            <form action="/books/<%= book._id %>/delete" method="POST" style="display:inline;">
+                <button type="submit">Delete</button>
+            </form>
+        </li>
+    <% }) %>
+</ul>

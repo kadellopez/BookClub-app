@@ -1,0 +1,14 @@
+<h2><%= book.title %></h2>
+<p>by <%= book.author %></p>
+<p><%= book.summary %></p>
+
+<a href="/books/<%= book._id %>/edit">Edit</a>
+<form action="/books/<%= book._id %>/delete" method="POST" style="display:inline;">
+    <button type="submit">Delete</button>
+</form>
+<a href="/books">Back to Books</a>
+
+
+
+
+
