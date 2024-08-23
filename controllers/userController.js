@@ -32,17 +32,28 @@ const login = async (req, res) => {
         res.status(400).json({ msg: error.message })
     }
 }
+const listUsers = async (req, res) => {
+    try {
+        const users = await User.find()
+        res.render('users/userList.ejs', { users })
+    } catch (error) {
+        res.status(400).json({ msg: error.message })
+    }
+}
 
 const logout = (req, res) => {
     req.session.destroy()
     res.redirect('/')
 }
 
+
+
 module.exports = {
     registerForm,
     register,
     loginForm,
     login,
-    logout
+    listUsers,
+    logout  
 }
 

@@ -1,2 +1,23 @@
+.flex-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 500px;
+}
 
-  
+body {
+    background-color: #C88A53;
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5em;
+}
+
+h1 {
+    display: flex;
+    padding-top: 100px;
+}
