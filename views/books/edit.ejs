@@ -1,3 +1,4 @@
+<div class="ebook">
 <h2>Edit Book</h2>
 <form action="/books/<%= book._id %>?_method=PUT" method="POST">
     <label for="title">Title:</label>
@@ -8,4 +9,7 @@
     <textarea name="summary" required><%= book.summary %></textarea>
     <button type="submit">Update Book</button>
 </form>
+</div>
+<div class="b2b">
 <a href="/books/<%= book._id %>">Back to Book</a>
+</div>

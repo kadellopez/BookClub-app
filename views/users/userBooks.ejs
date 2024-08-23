@@ -1,5 +1,6 @@
+<div class="userb">
 <h2><%= user.name %>'s Books</h2>
-
+</div>
 <% if (books.length > 0) { %>
     <ul>
         <% books.forEach(book => { %>
@@ -14,4 +15,6 @@
     <p>No books found for this user.</p>
 <% } %>
 
+<div class="buserl">
 <a href="/users/list">Back to User List</a>
+</div>

@@ -1,0 +1,87 @@
+body {
+    background-color: #73a8e4;
+}
+
+.flexy, .nbook, .ebook {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    border-style: dotted;
+    padding-bottom: 50px;
+    padding-top: 30px;
+}
+
+.welcome-book {
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   flex-direction: column;
+   padding-top: 100px;
+   padding-bottom: 100px;
+   border-style: dotted;
+}
+
+.login-form, .register-form {
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   flex-direction: column;
+   padding-top: 100px;
+   padding-bottom: 100px;
+   border-style: dotted;
+   
+   
+}
+
+.login-link, .register-link  {
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   flex-direction: column;
+   padding-top: 50px;
+}
+
+.ybooks {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding-top: 100px;
+    padding-bottom: 100px;
+    border-style: dotted;
+}
+
+.bookl, li {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
+    padding: 20px 50px 20px 50px;
+    border-style: dotted;
+    font-size: x-large;
+}
+
+.show {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    justify-content: space-around;
+    padding-top: 100px;
+    padding-bottom: 100px;
+    border-style: dotted;
+}
+
+.userl {
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   flex-direction: column;
+   border-style: dotted;
+}
+
+.homeb, .userb, .buserl, .b2b {
+    display: flex;
+    justify-content: center;
+    padding-top: 20px;
+}
