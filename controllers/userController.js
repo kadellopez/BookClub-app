@@ -1,4 +1,5 @@
 const User = require('../models/user')
+const Book = require('../models/book')
 
 const registerForm = (req, res) => {
     res.render('users/register')
@@ -32,6 +33,7 @@ const login = async (req, res) => {
         res.status(400).json({ msg: error.message })
     }
 }
+
 const listUsers = async (req, res) => {
     try {
         const users = await User.find()
@@ -46,7 +48,30 @@ const logout = (req, res) => {
     res.redirect('/')
 }
 
+const showUser = async (req, res) => {
+    try {
+        const user = await User.findById(req.params.id)
+        if (!user) {
+            return res.status(404).send('User not found')
+        }
+        res.render('users/show.ejs', { user })
+    } catch (error) {
+        res.status(400).json({ msg: error.message })
+    }
+}
 
+const showUserBooks = async (req, res) => {
+    try {
+        const user = await User.findById(req.params.id)
+        if (!user) {
+            return res.status(404).send('User not found')
+        }
+        const books = await Book.find({ user: user._id })
+        res.render('users/userBooks.ejs', { user, books })
+    } catch (error) {
+        res.status(400).json({ msg: error.message })
+    }
+}
 
 module.exports = {
     registerForm,
@@ -54,6 +79,7 @@ module.exports = {
     loginForm,
     login,
     listUsers,
-    logout  
+    logout,
+    showUser,
+    showUserBooks
 }
-
